@@ -39,7 +39,6 @@ function kana2romaji(string) {
         'っば' : 'bba','っび' : 'bbi','っぶ' : 'bbu','っべ' : 'bbe','っぼ' : 'bbo',
         'っぱ' : 'ppa','っぴ' : 'ppi','っぷ' : 'ppu','っぺ' : 'ppe','っぽ' : 'ppo'
         
-
 	};
 
 	var uniTable = {

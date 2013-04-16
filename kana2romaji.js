@@ -6,24 +6,24 @@ function kana2romaji(string) {
 	var value = '';
 
 	var triTable = {
-		'う゛ぁ': 'va','う゛ぃ' : 'vi', 'う゛ぅ' : 'vu','う゛ぇ' : 've', 'う゛ぉ' : 'vo'
+        'う゛ぁ': 'va','う゛ぃ' : 'vi', 'う゛ぅ' : 'vu','う゛ぇ' : 've', 'う゛ぉ' : 'vo'
 	};
 
 	var biTable = {
-		'きゃ' : 'kya','きゅ' : 'kyu','きょ' : 'kyo',
-		'ぎゃ' : 'gya','ぎゅ' : 'gyu','ぎょ' : 'gyo',
-		'しゃ' : 'sha','しゅ' : 'shu','しょ' : 'sho',
-		'じゃ' : 'ja','じゅ' : 'ju','じょ' : 'jo',
-		'ちゃ' : 'cha','ちゅ' : 'chu','ちょ' : 'cho',
-		'ぢゃ' : 'dya','ぢゅ' : 'dyu','ぢょ' : 'dyo',
-		'でゃ' : 'dha','でゅ' : 'dhu','でょ' : 'dho',
-		'にゃ' : 'nya','にゅ' : 'nyu','にょ' : 'nyo',
-		'ひゃ' : 'hya','ひゅ' : 'hyu','ひょ' : 'hyo',
-		'びゃ' : 'pya','びゅ' : 'byu','びょ' : 'byo',
-		'みゃ' : 'mya','みゅ' : 'myu','みょ' : 'myo',
-		'りゃ' : 'rya','りゅ' : 'ryu','りょ' : 'ryo',
-		'てぁ' : 'tha','てぃ' : 'thi','てぇ' : 'tee',
-		'う゛' : 'vu','あ゛' : 'a"',
+        'きゃ' : 'kya','きゅ' : 'kyu','きょ' : 'kyo',
+        'ぎゃ' : 'gya','ぎゅ' : 'gyu','ぎょ' : 'gyo',
+        'しゃ' : 'sha','しゅ' : 'shu','しょ' : 'sho',
+        'じゃ' : 'ja','じゅ' : 'ju','じょ' : 'jo',
+        'ちゃ' : 'cha','ちゅ' : 'chu','ちょ' : 'cho',
+        'ぢゃ' : 'dya','ぢゅ' : 'dyu','ぢょ' : 'dyo',
+        'でゃ' : 'dha','でゅ' : 'dhu','でょ' : 'dho',
+        'にゃ' : 'nya','にゅ' : 'nyu','にょ' : 'nyo',
+        'ひゃ' : 'hya','ひゅ' : 'hyu','ひょ' : 'hyo',
+        'びゃ' : 'pya','びゅ' : 'byu','びょ' : 'byo',
+        'みゃ' : 'mya','みゅ' : 'myu','みょ' : 'myo',
+        'りゃ' : 'rya','りゅ' : 'ryu','りょ' : 'ryo',
+        'てぁ' : 'tha','てぃ' : 'thi','てぇ' : 'tee',
+        'う゛' : 'vu','あ゛' : 'a"',
         'っか' : 'kka','っき' : 'kki','っく' : 'kku','っけ' : 'kke','っこ' : 'kko',
         'っさ' : 'ssa','っし' : 'sshi','っす' : 'ssu','っせ' : 'sse','っそ' : 'sso',
         'った' : 'tta','っち' : 'cchi','っつ' : 'ttu','って' : 'tte','っと' : 'tto',
@@ -42,29 +42,29 @@ function kana2romaji(string) {
 	};
 
 	var uniTable = {
-		'あ' : 'a','い' : 'i','う' : 'u','え' : 'e','お' : 'o',
-		'か' : 'ka','き' : 'ki','く' : 'ku','け' : 'ke','こ' : 'ko',
-		'さ' : 'sa','し' : 'shi','す' : 'su','せ' : 'se','そ' : 'so',
-		'た' : 'ta','ち' : 'chi','つ' : 'tsu','て' : 'te','と' : 'to',
-		'な' : 'na','に' : 'ni','ぬ' : 'nu','ね' : 'ne','の' : 'no',
-		'は' : 'ha','ひ' : 'hi','ふ' : 'fu','へ' : 'he','ほ' : 'ho',
-		'ま' : 'ma','み' : 'mi','む' : 'mu','め' : 'me','も' : 'mo',
-		'や' : 'ya','ゆ' : 'yu','よ' : 'yo',
-		'ら' : 'ra','り' : 'ri','る' : 'ru','れ' : 're','ろ' : 'ro',
-		'わ' : 'wa','を' : 'wo','ん' : 'n',
-		'が' : 'ga','ぎ' : 'gi','ぐ' : 'gu','げ' : 'ge','ご' : 'go',
-		'ざ' : 'za','じ' : 'ji','ず' : 'zu','ぜ' : 'ze','ぞ' : 'zo',
-		'だ' : 'da','ぢ' : 'di','づ' : 'du','で' : 'de','ど' : 'do',
-		'ば' : 'ba','び' : 'bi','ぶ' : 'bu','べ' : 'be','ぼ' : 'bo',
-		'ぱ' : 'pa','ぴ' : 'pi','ぷ' : 'pu','ぺ' : 'pe','ぽ' : 'po',
-		'ぁ' : 'xa','ぃ' : 'xi','ぅ' : 'xu','ぇ' : 'xe','ぉ' : 'xo',
-		'ゃ' : 'xya','ゅ' : 'xyu','ょ' : 'xyo','っ' : 'xtsu'
+        'あ' : 'a','い' : 'i','う' : 'u','え' : 'e','お' : 'o',
+        'か' : 'ka','き' : 'ki','く' : 'ku','け' : 'ke','こ' : 'ko',
+        'さ' : 'sa','し' : 'shi','す' : 'su','せ' : 'se','そ' : 'so',
+        'た' : 'ta','ち' : 'chi','つ' : 'tsu','て' : 'te','と' : 'to',
+        'な' : 'na','に' : 'ni','ぬ' : 'nu','ね' : 'ne','の' : 'no',
+        'は' : 'ha','ひ' : 'hi','ふ' : 'fu','へ' : 'he','ほ' : 'ho',
+        'ま' : 'ma','み' : 'mi','む' : 'mu','め' : 'me','も' : 'mo',
+        'や' : 'ya','ゆ' : 'yu','よ' : 'yo',
+        'ら' : 'ra','り' : 'ri','る' : 'ru','れ' : 're','ろ' : 'ro',
+        'わ' : 'wa','を' : 'wo','ん' : 'n',
+        'が' : 'ga','ぎ' : 'gi','ぐ' : 'gu','げ' : 'ge','ご' : 'go',
+        'ざ' : 'za','じ' : 'ji','ず' : 'zu','ぜ' : 'ze','ぞ' : 'zo',
+        'だ' : 'da','ぢ' : 'di','づ' : 'du','で' : 'de','ど' : 'do',
+        'ば' : 'ba','び' : 'bi','ぶ' : 'bu','べ' : 'be','ぼ' : 'bo',
+        'ぱ' : 'pa','ぴ' : 'pi','ぷ' : 'pu','ぺ' : 'pe','ぽ' : 'po',
+        'ぁ' : 'xa','ぃ' : 'xi','ぅ' : 'xu','ぇ' : 'xe','ぉ' : 'xo',
+        'ゃ' : 'xya','ゅ' : 'xyu','ょ' : 'xyo','っ' : 'xtsu'
 	};
 
 	if(triTable[string] !== undefined){
-		return triTable[string];
+        return triTable[string];
 	} else if(biTable[string] !== undefined) {
-		return biTable[string];
+        return biTable[string];
 	}
 
     var biCheck = new Object();
@@ -83,7 +83,7 @@ function kana2romaji(string) {
 
 	var buf = '';
 	for(var i = 0; i < arrayedString.length ; i++){
-		var str = arrayedString[i];
+        var str = arrayedString[i];
         buf += str;
         if(buf.length == 3){
             if(triTable[buf] !== undefined){
